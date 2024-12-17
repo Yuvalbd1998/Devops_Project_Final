@@ -1,8 +1,8 @@
 SSHLauncher{host='jenkins-worker1-task', port=22, credentialsId='jenkins_jenkins', jvmOptions='', javaPath='', prefixStartSlaveCmd='', suffixStartSlaveCmd='', launchTimeoutSeconds=60, maxNumRetries=10, retryWaitTime=15, sshHostKeyVerificationStrategy=hudson.plugins.sshslaves.verifiers.NonVerifyingKeyVerificationStrategy, tcpNoDelay=true, trackCredentials=true}
-[12/17/24 13:27:34] [SSH] Opening SSH connection to jenkins-worker1-task:22.
-[12/17/24 13:27:34] [SSH] WARNING: SSH Host Keys are not being verified. Man-in-the-middle attacks may be possible against this connection.
-[12/17/24 13:27:34] [SSH] Authentication successful.
-[12/17/24 13:27:35] [SSH] The remote user's environment is:
+[12/17/24 13:46:34] [SSH] Opening SSH connection to jenkins-worker1-task:22.
+[12/17/24 13:46:34] [SSH] WARNING: SSH Host Keys are not being verified. Man-in-the-middle attacks may be possible against this connection.
+[12/17/24 13:46:35] [SSH] Authentication successful.
+[12/17/24 13:46:35] [SSH] The remote user's environment is:
 BASH=/usr/bin/bash
 BASHOPTS=checkwinsize:cmdhist:complete_fullquote:extquote:force_fignore:globasciiranges:globskipdots:hostcomplete:interactive_comments:patsub_replacement:progcomp:promptvars:sourcepath
 BASH_ALIASES=()
@@ -30,14 +30,14 @@ OPTIND=1
 OSTYPE=linux-gnu
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/games
 PIPESTATUS=([0]="0")
-PPID=832
+PPID=926
 PS4='+ '
 PWD=/var/jenkins_home
 SHELL=/bin/bash
 SHELLOPTS=braceexpand:hashall:interactive-comments
 SHLVL=1
-SSH_CLIENT='172.20.0.2 56836 22'
-SSH_CONNECTION='172.20.0.2 56836 172.20.0.3 22'
+SSH_CLIENT='172.20.0.2 36176 22'
+SSH_CONNECTION='172.20.0.2 36176 172.20.0.3 22'
 TERM=dumb
 UID=1000
 USER=jenkins
@@ -46,14 +46,14 @@ Checking Java version in the PATH
 openjdk version "17.0.13" 2024-10-15
 OpenJDK Runtime Environment (build 17.0.13+11-Debian-2deb12u1)
 OpenJDK 64-Bit Server VM (build 17.0.13+11-Debian-2deb12u1, mixed mode, sharing)
-[12/17/24 13:27:35] [SSH] Checking java version of /home/jenkins/jenkins_home/jdk/bin/java
+[12/17/24 13:46:35] [SSH] Checking java version of /home/jenkins/jenkins_home/jdk/bin/java
 Couldn't figure out the Java version of /home/jenkins/jenkins_home/jdk/bin/java
 bash: line 1: /home/jenkins/jenkins_home/jdk/bin/java: No such file or directory
 
-[12/17/24 13:27:35] [SSH] Checking java version of java
-[12/17/24 13:27:35] [SSH] java -version returned 17.0.13.
-[12/17/24 13:27:35] [SSH] Starting sftp client.
-[12/17/24 13:27:35] [SSH] Remote file system root /home/jenkins/jenkins_home does not exist. Will try to create it...
+[12/17/24 13:46:35] [SSH] Checking java version of java
+[12/17/24 13:46:35] [SSH] java -version returned 17.0.13.
+[12/17/24 13:46:35] [SSH] Starting sftp client.
+[12/17/24 13:46:35] [SSH] Remote file system root /home/jenkins/jenkins_home does not exist. Will try to create it...
 java.io.IOException: Could not copy remoting.jar into '/home/jenkins/jenkins_home' on agent
 	at PluginClassLoader for ssh-slaves//hudson.plugins.sshslaves.SSHLauncher.copyAgentJar(SSHLauncher.java:733)
 	at PluginClassLoader for ssh-slaves//hudson.plugins.sshslaves.SSHLauncher.lambda$launch$0(SSHLauncher.java:462)
@@ -70,5 +70,5 @@ Caused by: com.trilead.ssh2.SFTPException: Permission denied (SSH_FX_PERMISSION_
 	at PluginClassLoader for trilead-api//com.trilead.ssh2.SFTPv3Client.mkdir(SFTPv3Client.java:955)
 	at PluginClassLoader for trilead-api//com.trilead.ssh2.jenkins.SFTPClient.mkdirs(SFTPClient.java:89)
 	... 6 more
-[12/17/24 13:27:35] Launch failed - cleaning up connection
-[12/17/24 13:27:35] [SSH] Connection closed.
+[12/17/24 13:46:35] Launch failed - cleaning up connection
+[12/17/24 13:46:35] [SSH] Connection closed.
