@@ -1,8 +1,8 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <slave>
-  <name>worker1</name>
+  <name>worker-node</name>
   <description>Worker</description>
-  <remoteFS>/home/jenkins/jenkins_home</remoteFS>
+  <remoteFS>/tmp/jenkins_agent</remoteFS>
   <numExecutors>3</numExecutors>
   <mode>NORMAL</mode>
   <retentionStrategy class="hudson.slaves.RetentionStrategy$Always"/>

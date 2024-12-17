@@ -1,0 +1,68 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@1472.ve4d5eca_143c4">
+  <actions>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobAction plugin="pipeline-model-definition@2.2218.v56d0cda_37c72"/>
+    <org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction plugin="pipeline-model-definition@2.2218.v56d0cda_37c72">
+      <jobProperties/>
+      <triggers/>
+      <parameters/>
+      <options/>
+    </org.jenkinsci.plugins.pipeline.modeldefinition.actions.DeclarativeJobPropertyTrackerAction>
+  </actions>
+  <description>MyDevOpsPipeline - Spellcheck</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@4000.v5198556e9cea_">
+    <script>pipeline {
+    agent { label &apos;worker-node&apos; } // Run the pipeline on the worker node
+
+    environment {
+        FASTAPI_PORT = &quot;8000&quot;
+    }
+
+    stages {
+        // Stage 1: Spellcheck
+        stage(&apos;Spellcheck&apos;) {
+            steps {
+                echo &quot;Running spellcheck on documentation...&quot;
+                sh &apos;&apos;&apos;
+                . /opt/jenkins-venv/bin/activate &amp;&amp; codespell Documentation/*.md || true
+                &apos;&apos;&apos;
+            }
+        }
+
+        // Stage 2: Build and Run FastAPI
+        stage(&apos;Build FastAPI&apos;) {
+            steps {
+                echo &quot;Installing dependencies and running FastAPI app...&quot;
+                sh &apos;&apos;&apos;
+                . /opt/jenkins-venv/bin/activate &amp;&amp; pip install --upgrade pip &amp;&amp; pip install -r Application/requirements.txt &amp;&amp; uvicorn Application.main:app --host 0.0.0.0 --port ${FASTAPI_PORT} &amp;
+                &apos;&apos;&apos;
+            }
+        }
+
+        // Stage 3: Deploy to K3s
+        stage(&apos;Deploy to K3s&apos;) {
+            steps {
+                echo &quot;Deploying FastAPI app to Kubernetes (K3s)...&quot;
+                sh &apos;&apos;&apos;
+                export KUBECONFIG=/home/jenkins/kubeconfig
+                kubectl apply -f K3s/k3s-deployment.yaml --validate=false
+                kubectl get pods
+                &apos;&apos;&apos;
+            }
+        }
+    }
+
+    post {
+        always {
+            echo &quot;Pipeline execution completed!&quot;
+        }
+    }
+}
+</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+  <disabled>false</disabled>
+</flow-definition>
