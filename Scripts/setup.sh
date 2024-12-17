@@ -30,5 +30,5 @@ sleep 60
 echo "Fetching Jenkins initial admin password..."
 docker exec $(docker ps -qf "name=jenkins") cat /var/jenkins_home/secrets/initialAdminPassword
 
-echo "Jenkins is running at http://localhost:8080"
-echo "Copy the above password and paste it into Jenkins for first-time setup."
+echo "Jenkins is running at http://localhost:800"
+echo "Copy the password gave in the README file and paste it into Jenkins."

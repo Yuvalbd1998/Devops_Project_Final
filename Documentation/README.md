@@ -14,7 +14,7 @@ This project includes:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/DevOps_HelloWorld.git
+   git clone https://github.com/Yuvalbd1998/DevOps_HelloWorld.git
    cd DevOps_HelloWorld
    ```
 
@@ -27,8 +27,10 @@ This project includes:
 
 3. **Jenkins First-Time Setup**:
    - After running the script, the Jenkins initial admin password will be displayed in the terminal.
-   - Open Jenkins at [http://localhost:8080](http://localhost:8080).
-   - Paste the **initial admin password** when prompted.
+   - Open Jenkins at [http://localhost:800](http://localhost:800).
+   - The Credential to login Jenkins are:
+   - Username: cyber
+   - Password: cyber
 
 4. **Verify the K3s Deployment**:
    ```bash

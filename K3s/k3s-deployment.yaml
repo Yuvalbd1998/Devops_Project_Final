@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: fastapi-container
-        image: tiangolo/uvicorn-gunicorn-fastapi:python3.9
+        image: app:latest
         env:
           - name: MODULE_NAME
             value: "Application.main"
@@ -31,6 +31,6 @@ spec:
     app: fastapi-app
   ports:
     - protocol: TCP
-      port: 80
+      port: 8080
       targetPort: 8000
-  type: NodePort
+  type: LoadBalancer
