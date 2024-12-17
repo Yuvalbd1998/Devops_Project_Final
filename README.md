@@ -49,5 +49,5 @@ This project includes:
 - **Build FastAPI**: Installs dependencies and starts FastAPI.
 - **Deploy to K3s**: Deploys the FastAPI app to Kubernetes.
 
-## License
-This project is licensed under MIT License.
+# Attribute:
+Yuval Ben David
