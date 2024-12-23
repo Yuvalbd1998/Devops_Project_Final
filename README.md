@@ -42,7 +42,6 @@ This project includes:
      ```bash
      kubectl get svc fastapi-service
      ```
-   - Access at: `http://<node-ip>:<node-port>`
 
 ## Jenkins Pipeline Stages
 - **Spellcheck**: Runs codespell to validate `README.md`.
