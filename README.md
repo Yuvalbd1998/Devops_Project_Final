@@ -14,8 +14,8 @@ This project includes:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/Yuvalbd1998/DevOps_HelloWorld.git
-   cd DevOps_HelloWorld
+   git clone https://github.com/Yuvalbd1998/Devops_Project_Final.git
+   cd Devops_Project_Final
    ```
 
 2. **Run the Setup Script**:
